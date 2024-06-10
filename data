@@ -1,0 +1,49 @@
+//docker
+# Use a base image with a web server
+FROM nginx:alpine
+
+# Copy the HTML files into the web server directory
+COPY . /usr/share/nginx/html
+
+docker build -t my-html-app .
+
+docker run -d -p 8080:80 my-html-app
+
+//docker commands
+docker --version
+docker run hello-world
+docker push ubuntu
+docker run -it -d ubuntu
+docker ps -a
+docker images
+docker exec -it containerId bash
+echo hello
+exit
+docker stop container containerId
+docker login
+docker commit containerId sachin/ubuntu
+docker push sachin/ubuntu
+docker rm containerId
+docker rmi imageId
+
+//jenkins
+node
+{
+stage('build')
+ {
+   echo "building project"
+ }
+ stage('deploy')
+ {
+   echo "deploying project"
+ }
+ stage('test')
+ {
+   echo "testing project"
+ }
+ stage('release')
+ {
+   echo "release project"
+ }
+}
+
